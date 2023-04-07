@@ -8,7 +8,7 @@ public class ZooDriver {
     public static void userMenu(ArrayList<Talkable> zoo){
         Scanner keyboard = new Scanner(System.in);
 
-        String newThingName = "";
+        String newThingName;
         int teacherAge = 34;
         int newMice = 0;
         boolean dog = false;
@@ -22,12 +22,13 @@ public class ZooDriver {
         System.out.println(menu);
 
         char input = keyboard.next().charAt(0);
+        keyboard.nextLine();    // consume the remaining \n
 
         switch (input){
             case '1':  // create Teacher
 
                 System.out.print("Enter the teacher's name>> ");
-                newThingName = keyboard.next();
+                newThingName = keyboard.nextLine();
 
                 System.out.print("Enter the teacher's age>> ");
 
@@ -49,7 +50,7 @@ public class ZooDriver {
             case '2':   // create Dog
 
                 System.out.print("Enter the dog's name>> ");
-                newThingName = keyboard.next();
+                newThingName = keyboard.nextLine();
 
                 System.out.print("Is the dog friendly (Y/N)? ");
                 char newFriendly = keyboard.next().charAt(0);
@@ -62,7 +63,7 @@ public class ZooDriver {
             case '3':   // create Cat
 
                 System.out.print("Enter the cat's name>> ");
-                newThingName = keyboard.next();
+                newThingName = keyboard.nextLine();
 
                 System.out.print("How many mice killed? ");
 
